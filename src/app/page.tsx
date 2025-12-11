@@ -1,4 +1,5 @@
 import FixedBackground from "@/components/Custom/FixedBackground";
+import { Process, Services } from "@/components/Sections";
 import Hero from "@/components/Sections/Hero";
 
 export default function HomePage() {
@@ -7,6 +8,8 @@ export default function HomePage() {
       <FixedBackground />
 
       <Hero locale="bg" />
+      <Services locale="bg" />
+      <Process locale="bg" />
     </main>
   );
 }

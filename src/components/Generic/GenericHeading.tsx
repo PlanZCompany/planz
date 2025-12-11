@@ -1,4 +1,3 @@
-import { Locale } from "@/types";
 import React from "react";
 
 type heading1Props = {
@@ -14,7 +13,11 @@ type heading1Props = {
     | "font-clash font-bold"
     | "font-clash font-extraBold"
     | "custom";
-  textColor?: "text-white" | "text-black";
+  textColor?:
+    | "text-white"
+    | "text-black"
+    | "text-primaryDarkGreen"
+    | "text-primaryGreen";
   align?:
     | "text-left"
     | "text-center"

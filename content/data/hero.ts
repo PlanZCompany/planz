@@ -88,3 +88,17 @@ export const HERO_SERVICE_SLIDES: HeroServiceSlide[] = [
     },
   },
 ];
+
+export type HeroService = {
+  id: HeroServiceSlideId;
+  title: string;
+  description: string;
+};
+
+export const getHeroServices = (locale: Locale): HeroService[] => {
+  return HERO_SERVICE_SLIDES.map((slide) => ({
+    id: slide.id,
+    title: slide.title[locale],
+    description: slide.description[locale],
+  }));
+};

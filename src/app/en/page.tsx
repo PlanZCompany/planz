@@ -1,6 +1,7 @@
 import FixedBackground from "@/components/Custom/FixedBackground";
 import Hero from "@/components/Sections/Hero";
 import { ClashDisplay } from "../fonts";
+import { Process, Services } from "@/components/Sections";
 
 export default function HomePage() {
   return (
@@ -8,6 +9,9 @@ export default function HomePage() {
       <FixedBackground />
 
       <Hero locale="en" />
+
+      <Services locale="en" />
+      <Process locale="en" />
     </main>
   );
 }

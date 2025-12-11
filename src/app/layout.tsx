@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { sansation } from "./fonts";
+import { ClashDisplay, sansation } from "./fonts";
 import Header from "@/components/Layout/Header";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sansation.variable}`}>
+    <html lang="en" className={`${sansation.variable} ${ClashDisplay.variable}`}>
       <body className={`antialiased min-h-screen overflow-x-clip`}>
         <Header />
         {children}

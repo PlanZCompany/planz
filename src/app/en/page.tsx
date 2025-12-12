@@ -2,6 +2,7 @@ import FixedBackground from "@/components/Custom/FixedBackground";
 import Hero from "@/components/Sections/Hero";
 import { ClashDisplay } from "../fonts";
 import { Process, Services } from "@/components/Sections";
+import CaseStudios from "@/components/Sections/CaseStudios";
 
 export default function HomePage() {
   return (
@@ -12,6 +13,7 @@ export default function HomePage() {
 
       <Services locale="en" />
       <Process locale="en" />
+      <CaseStudios locale="en" />
     </main>
   );
 }

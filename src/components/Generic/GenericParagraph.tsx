@@ -8,7 +8,11 @@ type paragraphProps = {
     | "font-sansation font-normal"
     | "font-clash font-normal"
     | "custom";
-  textColor?: "text-white" | "text-primaryYellow" | "text-black";
+  textColor?:
+    | "text-white"
+    | "text-primaryYellow"
+    | "text-black"
+    | "text-primaryGreen";
 };
 
 const fontMap = {

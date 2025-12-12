@@ -254,3 +254,14 @@ video::-webkit-media-controls-start-playback-button {
     transform: translateY(160px);
   }
 }
+
+.gray_gradient_second {
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(97, 97, 97, 0.1) 0px,
+      rgba(97, 97, 97, 0.1) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(90deg, rgb(43, 43, 43), rgb(43, 43, 43));
+}

@@ -4,10 +4,13 @@ import GenericHeading from "../Generic/GenericHeading";
 import { CASE_STUDIES } from "../../../content/data/case";
 import GenericImage from "../Generic/GenericImage";
 import Link from "next/link";
+import Badge from "../Custom/Badge";
 
 const CaseStudios = ({ locale }: { locale: Locale }) => {
   const { heading, subheading, extraText, projects } = CASE_STUDIES;
-  const projectsContent = projects.map((project) => {
+  const projectsContent = projects.map((project, index) => {
+    const isOdd = index % 2 === 0;
+
     const featuresContent = project.features[locale].map((feature, index) => (
       <li
         key={`${feature}-${index}`}
@@ -30,12 +33,17 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
     return (
       <li
         key={project.title.en}
-        className="w-full min-h-[500px] max-w-[1000px] mx-auto 
-        rounded-3xl overflow-hidden relative border-2 border-primaryDarkGreen gray_card_gradient p-4 md:p-6 flex flex-col md:flex-row"
+        className={`w-full min-h-[500px] max-w-[1000px] mx-auto 
+        rounded-3xl overflow-hidden relative border-2 border-primaryDarkGreen gray-gradient_3 p-4 md:p-6 flex flex-col ${
+          isOdd ? "md:flex-row-reverse" : "md:flex-row"
+        }`}
       >
         <div className="flex-1 md:max-w-[45%] flex">
           <div className="w-full flex flex-col gap-4 md:gap-5 m-auto">
-            <div className="border border-gray-400 bg-primaryDarkGreen/20 px-4 py-2 rounded-[100px] flex justify-center items-center w-full md:w-fit">
+            <div
+              className={`border border-gray-400 bg-primaryDarkGreen/20 px-4 py-2 rounded-[100px] flex justify-center items-center w-full md:w-fit
+            ${isOdd ? "md:ml-auto" : "md:mr-auto"}`}
+            >
               <GenericParagraph
                 pType="regular"
                 fontStyle={
@@ -51,8 +59,8 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
 
             <GenericHeading
               headingType="h3"
-              align="text-left"
               fontStyle="font-sansation font-bold"
+              extraClass={`${isOdd ? "md:text-right" : "md:text-left"}`}
             >
               {project.title[locale]}
             </GenericHeading>
@@ -64,17 +72,27 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
               }
               textColor="text-white"
               pType="regular"
-              extraClass="opacity-[90]"
+              extraClass={`opacity-[90] ${
+                isOdd ? "md:text-right" : "md:text-left"
+              }`}
             >
               {project.description[locale]}
             </GenericParagraph>
 
-            <ul className="w-full flex flex-wrap gap-3">{featuresContent}</ul>
+            <ul
+              className={`w-full flex flex-wrap gap-3 ${
+                isOdd ? "md:justify-end" : "md:justify-start"
+              }`}
+            >
+              {featuresContent}
+            </ul>
 
             <div className="mt-auto w-full pt-4">
               <Link
                 href={project.url}
-                className="w-full flex items-center gap-2"
+                className={`w-full flex items-center gap-2  ${
+                  isOdd ? "md:justify-end" : "md:justify-start"
+                }`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -98,9 +116,9 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
                   >
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -133,7 +151,10 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
             <div className="mt-auto h-0.5 bg-white w-full"></div>
           </div>
           <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
-            <div className="w-full md:w-fit flex items-center gap-2 md:ml-auto">
+            <div className="w-full justify-center md:justify-end flex">
+              <Badge heading={extraText[locale]} />
+            </div>
+            {/* <div className="w-full md:w-fit flex items-center gap-2 md:ml-auto">
               <div className="size-5 bg-primaryGreen rounded-full"></div>
               <GenericParagraph
                 pType="regular"
@@ -145,7 +166,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
               >
                 {extraText[locale]}
               </GenericParagraph>
-            </div>
+            </div> */}
 
             <div className="w-full md:w-fit">
               <GenericHeading

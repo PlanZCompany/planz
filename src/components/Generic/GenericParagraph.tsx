@@ -7,6 +7,7 @@ type paragraphProps = {
   fontStyle?:
     | "font-sansation font-normal"
     | "font-clash font-normal"
+    | "font-clash font-bold"
     | "custom";
   textColor?:
     | "text-white"

@@ -7,6 +7,7 @@ import {
 } from "../../../content/data/process";
 import GenericParagraph from "../Generic/GenericParagraph";
 import GenericHeading from "../Generic/GenericHeading";
+import Badge from "../Custom/Badge";
 
 const Process = ({ locale }: { locale: Locale }) => {
   const { heading, subheading, extraText } = PROCESS_SECTION_COPY;
@@ -76,7 +77,7 @@ const Process = ({ locale }: { locale: Locale }) => {
               </GenericHeading>
             </div>
 
-            <div className="w-full2">
+            <div className="w-full">
               <GenericParagraph
                 fontStyle={
                   locale === "en"
@@ -101,7 +102,10 @@ const Process = ({ locale }: { locale: Locale }) => {
       <article className="w-full content_wrapper flex flex-col gap-6 md:gap-14">
         <div className="w-full flex">
           <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
-            <div className="w-full md:w-fit flex items-center gap-2">
+            <div className="w-fit">
+              <Badge heading={extraText[locale]} />
+            </div>
+            {/* <div className="w-full md:w-fit flex items-center gap-2">
               <div className="size-5 bg-primaryGreen rounded-full"></div>
               <GenericParagraph
                 pType="regular"
@@ -113,7 +117,7 @@ const Process = ({ locale }: { locale: Locale }) => {
               >
                 {extraText[locale]}
               </GenericParagraph>
-            </div>
+            </div> */}
 
             <div className="w-full md:w-fit">
               <GenericHeading headingType="h2">

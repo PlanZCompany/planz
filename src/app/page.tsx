@@ -1,5 +1,12 @@
 import FixedBackground from "@/components/Custom/FixedBackground";
-import { Process, Services } from "@/components/Sections";
+import {
+  CaseStudios,
+  FAQSection,
+  Process,
+  Results,
+  Services,
+  Tech,
+} from "@/components/Sections";
 import Hero from "@/components/Sections/Hero";
 
 export default function HomePage() {
@@ -10,6 +17,10 @@ export default function HomePage() {
       <Hero locale="bg" />
       <Services locale="bg" />
       <Process locale="bg" />
+      <CaseStudios locale="bg" />
+      <Results locale="bg" />
+      <Tech locale="bg" />
+      <FAQSection locale="bg" />
     </main>
   );
 }

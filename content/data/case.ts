@@ -14,12 +14,12 @@ export const CASE_STUDIES = {
   projects: [
     {
       type: {
-        bg: "Миграция",
-        en: "Мigration",
+        bg: "Цялостна миграция",
+        en: "Full migration",
       },
       title: {
-        bg: "ЕЛГО онлайн магазин за ВИК части",
-        en: "ELGO online store for VIK parts",
+        bg: "'ЕЛГО' онлайн магазин за ВИК части",
+        en: "'ELGO' online store for VIK parts",
       },
       description: {
         bg: "Миграция от WordPress към напълно контрилиран сайт. Подобрена визия, функционалност и 90% увеличение на продажбите и популярността.",
@@ -34,23 +34,101 @@ export const CASE_STUDIES = {
     },
     {
       type: {
-        bg: "Миграция",
-        en: "Мigration",
+        bg: "Цялостна миграция",
+        en: "Full migration",
       },
       title: {
-        bg: "Интернет магазин",
-        en: "E-commerce",
+        bg: "'Обичайте се' онлайн магазин",
+        en: "'Obichaite se' online store",
       },
       description: {
-        bg: "Интернет магазин",
-        en: "E-commerce",
+        bg: "Миграция от PHP към напълно контрилиран сайт с Next.js. Подобрена визия, функционалност и 80% увеличение на продажбите и популярността.",
+        en: "Migration from PHP to a fully controlled website with Next.js. Improved vision, functionality and 80% increase in sales and popularity.",
       },
       features: {
-        bg: ["Интернет магазин", "Интернет магазин", "Интернет магазин"],
-        en: ["E-commerce", "E-commerce", "E-commerce"],
+        bg: [
+          "Дизайн",
+          "Имейли",
+          "SEO",
+          "Поръчки",
+          "Аналитици",
+          "Плащания",
+          "Админ Панел",
+        ],
+        en: [
+          "Design",
+          "Emails",
+          "SEO",
+          "Orders",
+          "Analytics",
+          "Payments",
+          "Admin Panel",
+        ],
       },
-      image: "/static/elgo.png",
-      url: "https://elgo.bg",
+      image: "/static/obichaite-se.png",
+      url: "https://obichaite-se.com/",
+    },
+    {
+      type: {
+        bg: "Цялостна миграция",
+        en: "Full migration",
+      },
+      title: {
+        bg: "'Град на лъжите' онлайн магазин",
+        en: "'Grad na lаjite' online store",
+      },
+      description: {
+        bg: "Миграция от PHP към напълно контрилиран сайт с Next.js. Подобрена визия, функционалност и 100% увеличение на продажбите и популярността.",
+        en: "Migration from PHP to a fully controlled website with Next.js. Improved vision, functionality and 100% increase in sales and popularity.",
+      },
+      features: {
+        bg: [
+          "Дизайн",
+          "Имейли",
+          "SEO",
+          "Поръчки",
+          "Аналитици",
+          "Плащания",
+          "Админ Панел",
+          "Econt",
+          "Speedy",
+          "BoxNow",
+        ],
+        en: [
+          "Design",
+          "Emails",
+          "SEO",
+          "Orders",
+          "Analytics",
+          "Payments",
+          "Admin Panel",
+          "Econt",
+          "Speedy",
+          "BoxNow",
+        ],
+      },
+      image: "/static/grad-na-lujite.png",
+      url: "https://grad-na-lajite-dun.vercel.app/", //TODO change when it's done
+    },
+    {
+      type: {
+        bg: "Цялостен Проект",
+        en: "Full project",
+      },
+      title: {
+        bg: "'Eumainhillfarms' представителен website.",
+        en: "'Eumainhillfarms' representative website.",
+      },
+      description: {
+        bg: "Проект създаден по идея от нулата, отлични SEO резултати, конкуретна визия и функционалност.",
+        en: "Project created from scratch, excellent SEO results, competitive vision and functionality.",
+      },
+      features: {
+        bg: ["Дизайн", "Презентация", "SEO"],
+        en: ["Design", "Presentation", "SEO"],
+      },
+      image: "/static/eumain.png",
+      url: "https://eumainhillfarms.com/",
     },
   ],
 } as const;

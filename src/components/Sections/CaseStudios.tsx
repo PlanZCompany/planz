@@ -90,7 +90,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
             <div className="mt-auto w-full pt-4">
               <Link
                 href={project.url}
-                className={`w-full flex items-center gap-2  ${
+                className={`w-full flex items-center gap-2 hover:opacity-80 ${
                   isOdd ? "md:justify-end" : "md:justify-start"
                 }`}
                 target="_blank"
@@ -133,7 +133,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
           <GenericImage
             src={project.image}
             alt={project.title[locale]}
-            wrapperClassName="w-full min-h-[400px] h-full relative"
+            wrapperClassName="w-full min-h-[250px] md:min-h-[400px] h-full relative"
             imageClassName="w-full h-full object-contain"
             fill={true}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
@@ -147,31 +147,18 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
     <section className="w-full flex scroll-mt-20 pt-10 md:py-20" id="case">
       <article className="w-full content_wrapper flex flex-col gap-6 md:gap-14">
         <div className="w-full flex">
-          <div className="w-full flex">
+          <div className="w-full portrait:hidden landscape:flex">
             <div className="mt-auto h-0.5 bg-white w-full"></div>
           </div>
           <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
-            <div className="w-full justify-center md:justify-end flex">
+            <div className="w-full justify-center md:justify-end flex mb-3 md:mb-[unset]">
               <Badge heading={extraText[locale]} />
             </div>
-            {/* <div className="w-full md:w-fit flex items-center gap-2 md:ml-auto">
-              <div className="size-5 bg-primaryGreen rounded-full"></div>
-              <GenericParagraph
-                pType="regular"
-                fontStyle={
-                  locale === "en"
-                    ? "font-clash font-normal"
-                    : "font-sansation font-normal"
-                }
-              >
-                {extraText[locale]}
-              </GenericParagraph>
-            </div> */}
 
             <div className="w-full md:w-fit">
               <GenericHeading
                 headingType="h2"
-                extraClass="text-center! md:text-right!"
+                extraClass="text-center! md:text-right! mb-3 md:mb-[unset]"
               >
                 {heading[locale]}
               </GenericHeading>

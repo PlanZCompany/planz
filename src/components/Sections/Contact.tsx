@@ -151,33 +151,20 @@ export const ContactForm = ({ locale }: { locale: Locale }) => {
   };
 
   return (
-    <div className={`content_wrapper w-full pt-10 md:py-20`}>
+    <div className={`content_wrapper w-full pt-10 md:py-20 pb-10`} id="contact">
       <div className="w-full flex">
-        <div className="w-full flex">
+        <div className="w-full landscape:flex portrait:hidden">
           <div className="mt-auto h-0.5 bg-white w-full"></div>
         </div>
         <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
-          <div className="w-full justify-center md:justify-end flex">
+          <div className="w-full justify-center md:justify-end flex mb-3 md:mb-[unset]">
             <Badge heading={eyebrow} />
           </div>
-          {/* <div className="w-full md:w-fit flex items-center gap-2 md:ml-auto">
-            <div className="size-5 bg-primaryGreen rounded-full"></div>
-            <GenericParagraph
-              pType="regular"
-              fontStyle={
-                locale === "en"
-                  ? "font-clash font-normal"
-                  : "font-sansation font-normal"
-              }
-            >
-              {eyebrow}
-            </GenericParagraph>
-          </div> */}
 
           <div className="w-full md:w-fit">
             <GenericHeading
               headingType="h2"
-              extraClass="text-center! md:text-right!"
+              extraClass="text-center! md:text-right! mb-3 md:mb-[unset]"
             >
               {heading}
             </GenericHeading>

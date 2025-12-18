@@ -1,6 +1,7 @@
 import FixedBackground from "@/components/Custom/FixedBackground";
 import {
   CaseStudios,
+  ContactForm,
   FAQSection,
   Process,
   Results,
@@ -13,7 +14,6 @@ export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col">
       <FixedBackground />
-
       <Hero locale="bg" />
       <Services locale="bg" />
       <Process locale="bg" />
@@ -21,6 +21,7 @@ export default function HomePage() {
       <Results locale="bg" />
       <Tech locale="bg" />
       <FAQSection locale="bg" />
+      <ContactForm locale="bg" />
     </main>
   );
 }

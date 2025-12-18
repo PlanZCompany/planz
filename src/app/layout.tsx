@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ClashDisplay, sansation } from "./fonts";
 import Header from "@/components/Layout/Header";
+import Footer from "@/components/Layout/Footer";
+import Aside from "@/components/Custom/Aside";
+import ScrollDown from "@/components/Custom/ScrollDown";
 
 export const metadata: Metadata = {
   title: "PlanZ – Уеб разработка и дигитални решения",
@@ -22,10 +25,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${sansation.variable} ${ClashDisplay.variable}`}>
+    <html
+      lang="en"
+      className={`${sansation.variable} ${ClashDisplay.variable}`}
+    >
       <body className={`antialiased min-h-screen overflow-x-clip`}>
         <Header />
+        <ScrollDown />
         {children}
+        <Aside />
+        <Footer />
       </body>
     </html>
   );

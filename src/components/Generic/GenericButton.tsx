@@ -8,9 +8,9 @@ focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disable
 const classMap = {
   primary: `bg-gradient-to-br from-primaryGreen to-primaryDarkGreen text-primaryDarkBlue
          text-xl font-bold cursor-pointer border border-primaryDarkBlue
-         transition-all duration-300 ease-in-out`,
+         transition-all duration-300 ease-in-out hover:bg-gradient-to-br hover:from-primaryDarkGreen hover:to-primaryGreen hover:text-primaryDarkBlue hover:border-primaryDarkBlue`,
   secondary:
-    "border-[1px] border-white text-white text-xl font-bold cursor-pointer bg-primaryGreen/20",
+    "border-[1px] border-white text-white text-xl font-bold cursor-pointer bg-primaryGreen/20 hover:bg-primaryGreen/30 transition-all duration-300 ease-in-out",
 };
 
 type GenericButtonProps = {

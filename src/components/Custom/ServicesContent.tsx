@@ -37,7 +37,7 @@ const ServicesContent = ({ locale }: { locale: Locale }) => {
           fill={true}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         />
-        <div className="flex m-auto flex-col w-full gap-4 md:gap-6 relative z-4">
+        <div className="flex m-auto flex-col w-full gap-4 md:gap-6 relative z-4 p-3 xl:p-[unset]">
           <div className="w-full appear_desseapear">
             <GenericHeading
               headingType="h3"

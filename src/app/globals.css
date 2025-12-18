@@ -290,3 +290,19 @@ video::-webkit-media-controls-start-playback-button {
     ),
     linear-gradient(90deg, rgb(22, 29, 25), rgb(42, 53, 46));
 }
+
+.circle_expand {
+  transform-origin: center;
+  animation: circle-expand 3s ease-in-out infinite;
+}
+@keyframes circle-expand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

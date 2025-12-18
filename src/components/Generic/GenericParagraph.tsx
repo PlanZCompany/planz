@@ -18,10 +18,10 @@ type paragraphProps = {
 
 const fontMap = {
   extraSmall: "text-xs",
-  small: "text-[12px] md:text-[16px] leading-[150%] tracking-[0.01em]",
+  small: "text-[14px] md:text-[16px] leading-[150%] tracking-[0.01em]",
   semi: "text-[14px] md:text-[18px] leading-[150%] tracking-[0.01em]",
   regular: "text-[16px] md:text-[18px] leading-[150%] tracking-[0.01em]",
-  large: "text-[18px] md:text-[24px] leading-[150%] tracking-[0.01em]",
+  large: "text-[18px] md:text-[20px] 2xl:text-[24px] leading-[150%] tracking-[0.01em]",
   custom: "custom",
 };
 

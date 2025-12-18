@@ -45,16 +45,14 @@ export const FaqItem: React.FC<FaqItemProps> = ({
           {question}
         </GenericHeading>
 
-        <span className="flex h-7 w-7 items-center justify-center rounded-full border border-primaryGreen bg-primaryDarkGreen transition-colors">
+        <span className="hover:opacity-80 cursor-pointer flex h-7 w-7 min-h-7 min-w-7 items-center justify-center rounded-full border border-primaryGreen bg-primaryDarkGreen transition-colors">
           <svg className="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
-            {/* horizontal line (минус) */}
             <path
               d="M5 12h14"
               stroke="#FFF"
               strokeWidth="2"
               strokeLinecap="round"
             />
-            {/* вертикална линия (за плюс) – скриваме я, когато е отворено */}
             {!isOpen && (
               <path
                 d="M12 5v14"

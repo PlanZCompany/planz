@@ -6,8 +6,8 @@ export const RESULTS_SECTION_COPY = {
     en: "Proof of quality behind the design",
   },
   subheading: {
-    bg: "Всеки проект минава през техническа и SEO проверка.",
-    en: "Every project passes technical and SEO checks.",
+    bg: "Резултати",
+    en: "Results",
   },
   description: {
     bg: "За нас красивият сайт е само половината работа. Завършваме проектите си с измерими резултати – отлично техническо състояние, скорост и SEO показатели, потвърдени от инструменти като PageSpeed Insights и Ahrefs.",

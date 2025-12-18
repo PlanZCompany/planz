@@ -27,14 +27,15 @@ const Process = ({ locale }: { locale: Locale }) => {
       horizontalAnimationDelay = 1.5;
     }
     const horizontalLine = (
-      <div className="absolute right-0 top-[50%] translate-y-[-50%] w-40 h-1 bg-primaryDarkGreen/80 translate-x-[50%] z-[-1]">
+      <div className="hidden xl:block absolute right-0 top-[50%] translate-y-[-50%] w-40 h-1 bg-primaryDarkGreen/80 translate-x-[50%] z-[-1]">
         <div
           className="absolute left-0 top-[50%] translate-y-[-50%] w-3 h-3 bg-primaryGreen rounded-full pulse_line"
           style={{ animationDelay: `${horizontalAnimationDelay}s` }}
         ></div>
       </div>
     );
-    const verticalLineExist = index === 0 || index === 1 || index === 2;
+    const verticalLineExist =
+      index === 0 || index === 1 || index === 2 || index === 3 || index === 4;
     let verticalAnimationDelay = 0;
     if (index === 0) {
       verticalAnimationDelay = 0;
@@ -45,8 +46,15 @@ const Process = ({ locale }: { locale: Locale }) => {
     } else if (index === 3) {
       verticalAnimationDelay = 1.5;
     }
+
+    const areLastTwoInMobile = index === 3 || index === 4;
+
     const verticalLine = (
-      <div className="absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[50%] w-1 h-40 bg-primaryDarkGreen/80 z-[-1]">
+      <div
+        className={`absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[50%] w-1 h-40 bg-primaryDarkGreen/80 z-[-1]
+      ${areLastTwoInMobile ? "xl:opacity-0" : ""}
+      `}
+      >
         <div
           className="absolute top-0 left-[50%] translate-x-[-50%] w-3 h-3 bg-primaryGreen rounded-full pulse_line_vertical"
           style={{ animationDelay: `${verticalAnimationDelay}s` }}
@@ -102,38 +110,37 @@ const Process = ({ locale }: { locale: Locale }) => {
       <article className="w-full content_wrapper flex flex-col gap-6 md:gap-14">
         <div className="w-full flex">
           <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
-            <div className="w-fit">
+            <div className="w-fit mx-auto md:mx-[unset]">
               <Badge heading={extraText[locale]} />
             </div>
-            {/* <div className="w-full md:w-fit flex items-center gap-2">
-              <div className="size-5 bg-primaryGreen rounded-full"></div>
-              <GenericParagraph
-                pType="regular"
-                fontStyle={
-                  locale === "en"
-                    ? "font-clash font-normal"
-                    : "font-sansation font-normal"
-                }
-              >
-                {extraText[locale]}
-              </GenericParagraph>
-            </div> */}
 
             <div className="w-full md:w-fit">
-              <GenericHeading headingType="h2">
+              <GenericHeading
+                headingType="h2"
+                align="portrait:text-center landscape:text-left"
+                fontStyle={
+                  locale === "en"
+                    ? "font-clash font-bold"
+                    : "font-sansation font-bold"
+                }
+                extraClass="mb-2 md:mb-[unset]"
+              >
                 {heading[locale]}
               </GenericHeading>
-              <GenericParagraph pType="large">
+              <GenericParagraph
+                pType="large"
+                extraClass="text-center md:text-left"
+              >
                 {subheading[locale]}
               </GenericParagraph>
             </div>
           </div>
 
-          <div className="w-full flex">
+          <div className="w-full hidden md:flex">
             <div className="mt-auto h-0.5 bg-white w-full"></div>
           </div>
         </div>
-        <ul className="w-full grid grid-cols-1 md:grid-cols-3 md:gap-x-20 gap-y-20">
+        <ul className="w-full grid grid-cols-1 xl:grid-cols-3 md:gap-x-20 gap-y-20">
           {processStepsContent}
         </ul>
       </article>

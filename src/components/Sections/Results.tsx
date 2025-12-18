@@ -24,34 +24,40 @@ const Results = ({ locale }: { locale: Locale }) => {
   });
 
   return (
-    <section className="w-full flex scroll-mt-20" id="home">
+    <section
+      className="w-full flex scroll-mt-20 pt-10 md:pt-[unset]"
+      id="results"
+    >
       <article className="w-full content_wrapper flex flex-col gap-6 md:gap-14">
         <div className="w-full flex">
           <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
-            <div className="w-fit">
+            <div className="w-fit mx-auto md:mx-[unset] mb-3 md:mb-[unset]">
               <Badge heading={subheading} />
             </div>
-            {/* <div className="w-full md:w-fit flex items-center gap-2">
-              <div className="size-5 bg-primaryGreen rounded-full"></div>
-              <GenericParagraph
-                pType="regular"
-                fontStyle={
-                  locale === "en"
-                    ? "font-clash font-normal"
-                    : "font-sansation font-normal"
-                }
-              >
-                {subheading}
-              </GenericParagraph>
-            </div> */}
 
             <div className="w-full md:w-fit">
-              <GenericHeading headingType="h2">{heading}</GenericHeading>
-              <GenericParagraph pType="large">{description}</GenericParagraph>
+              <GenericHeading
+                headingType="h2"
+                align="portrait:text-center landscape:text-left"
+                fontStyle={
+                  locale === "en"
+                    ? "font-clash font-bold"
+                    : "font-sansation font-bold"
+                }
+                extraClass="mb-2 md:mb-[unset]"
+              >
+                {heading}
+              </GenericHeading>
+              <GenericParagraph
+                pType="large"
+                extraClass="text-center md:text-left"
+              >
+                {description}
+              </GenericParagraph>
             </div>
           </div>
 
-          <div className="w-full flex">
+          <div className="w-full portrait:hidden landscape:flex">
             <div className="mt-auto h-0.5 bg-white w-full"></div>
           </div>
         </div>

@@ -98,6 +98,7 @@ export default function RootLayout({
       "query-input": "required name=search_term_string",
     },
   };
+  console.log("BUILD")
 
   return (
     <html

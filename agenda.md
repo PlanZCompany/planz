@@ -14,10 +14,10 @@
 [done] mobile/tablet
 [done] hover effect on buttons
 
-- да оправя синхрона межу сървиси
-- fav icon meta image and etc
-- pwa
-- стабино сео
+[done] да оправя синхрона межу сървиси
+[done] fav icon meta image and etc
+[done] стабино сео
+- pwa?
 
 //занапред
 ??социални мрежи??

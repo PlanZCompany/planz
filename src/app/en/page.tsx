@@ -1,7 +1,15 @@
 import FixedBackground from "@/components/Custom/FixedBackground";
 import Hero from "@/components/Sections/Hero";
 import { ClashDisplay } from "../fonts";
-import { CaseStudios, ContactForm, FAQSection, Process, Results, Services, Tech } from "@/components/Sections";
+import {
+  CaseStudios,
+  ContactForm,
+  FAQSection,
+  Process,
+  Results,
+  Services,
+  Tech,
+} from "@/components/Sections";
 
 export default function HomePage() {
   return (

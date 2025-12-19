@@ -1,6 +1,3 @@
-font - sansation, prompt, clash
-colors - #27d47f, #B4F8C8
-
 //ЗАДЪЛЖИТЕЛНИ
 
 [done] performance / SEO - секция
@@ -14,10 +11,12 @@ colors - #27d47f, #B4F8C8
 [done] аside с бързи връзки (what's app, viber)
 [done] scroll to next section - ref bulgaria remember
 
-- mobile/tablet
-- hover effect on buttons
+[done] mobile/tablet
+[done] hover effect on buttons
 
 - да оправя синхрона межу сървиси
+- fav icon meta image and etc
+- pwa
 - стабино сео
 
 //занапред

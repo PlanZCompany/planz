@@ -176,7 +176,7 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 .appear_desseapear {
-  animation: switch 10s ease-in-out 0.5s infinite;
+  animation: switch 10s ease-in-out infinite;
   transform: translateX(-50%);
 }
 @keyframes switch {
@@ -185,6 +185,10 @@ video::-webkit-media-controls-start-playback-button {
     transform: translateX(-50%);
   }
   15% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  25% {
     opacity: 1;
     transform: translateX(0%);
   }
@@ -199,7 +203,7 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 .appear_desseapear2 {
-  animation: switch2 10s ease-in-out 0.1s infinite;
+  animation: switch2 10s ease-in-out infinite;
   transform: translateX(50%);
 }
 @keyframes switch2 {
@@ -207,11 +211,15 @@ video::-webkit-media-controls-start-playback-button {
     opacity: 0;
     transform: translateX(50%);
   }
-  10% {
+  15% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  25% {
     opacity: 1;
     transform: translateX(0%);
   }
-  90% {
+  85% {
     opacity: 1;
     transform: translateX(0%);
   }

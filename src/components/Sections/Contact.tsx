@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useCallback, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import GenericButton from "@/components/Generic/GenericButton";
-import Link from "next/link";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { Locale } from "@/types";

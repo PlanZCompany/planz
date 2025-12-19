@@ -7,7 +7,13 @@ import { useEffect, useState } from "react";
 import GenericParagraph from "../Generic/GenericParagraph";
 import GenericImage from "../Generic/GenericImage";
 
-const ServicesContent = ({ locale }: { locale: Locale }) => {
+const ServicesContent = ({
+  locale,
+  setCurrentIndexCallbackHandler,
+}: {
+  locale: Locale;
+  setCurrentIndexCallbackHandler: (status: "animation" | "morphing") => void;
+}) => {
   const [currentHeading, setCurrentHeading] = useState(0);
   const [currentDescription, setCurrentDescription] = useState(0);
 
@@ -21,9 +27,12 @@ const ServicesContent = ({ locale }: { locale: Locale }) => {
       setCurrentDescription(
         (prevIndex) => (prevIndex + 1) % servicesContent.length
       );
+      setCurrentIndexCallbackHandler("morphing");
     }, 10000);
     return () => clearInterval(interval);
-  }, [servicesContent.length]);
+  }, [servicesContent.length, setCurrentIndexCallbackHandler]);
+
+  console.log("RENDER SERVICES", currentHeading);
 
   return (
     <div className="flex flex-1 p-6 md:p-20">

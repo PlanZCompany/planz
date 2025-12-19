@@ -10,13 +10,15 @@ const NUM_PARTICLES = 60000;
 
 const HOLD_DURATION = 9;
 const MORPH_DURATION = 1;
-const TOTAL_DURATION = HOLD_DURATION + MORPH_DURATION;
+// const TOTAL_DURATION = HOLD_DURATION + MORPH_DURATION;
 
 type MorphProps = {
   rotationSpeed?: number;
   pointSize?: number;
   thickness?: number;
   scale?: THREE.Vector3Tuple;
+  currentStatus?: "animation" | "morphing";
+  setCurrentIndexCallbackHandler: (status: "animation" | "morphing") => void;
 };
 
 const WEBSITE_KEYS = [
@@ -154,6 +156,8 @@ export default function MorphingWebsiteRedesign({
   pointSize = 0.015,
   thickness = 0.2,
   scale = [1, 1, 10],
+  currentStatus = "animation",
+  setCurrentIndexCallbackHandler,
 }: MorphProps) {
   const websiteGltf = useGLTF("/models/website.gltf") as unknown as {
     nodes: Record<string, THREE.Mesh>;
@@ -265,11 +269,13 @@ export default function MorphingWebsiteRedesign({
     timeRef.current += delta;
     let time = timeRef.current;
 
-    if (time >= TOTAL_DURATION + 0.3) {
+    if (currentStatus === "morphing") {
+      setCurrentIndexCallbackHandler("animation");
       timeRef.current = 0;
       time = 0;
       currentIndexRef.current = nextIndexRef.current;
       nextIndexRef.current = (nextIndexRef.current + 1) % targets.length;
+      return;
     }
 
     const attr = geometry.getAttribute("position") as THREE.BufferAttribute;
@@ -304,8 +310,8 @@ export default function MorphingWebsiteRedesign({
   );
 }
 
-useGLTF.preload("/models/website.gltf");
-useGLTF.preload("/models/redesign.gltf");
-useGLTF.preload("/models/seo.gltf");
-useGLTF.preload("/models/integrations.gltf");
-useGLTF.preload("/models/modern.gltf");
+// useGLTF.preload("/models/website.gltf");
+// useGLTF.preload("/models/redesign.gltf");
+// useGLTF.preload("/models/seo.gltf");
+// useGLTF.preload("/models/integrations.gltf");
+// useGLTF.preload("/models/modern.gltf");

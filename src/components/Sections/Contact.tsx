@@ -26,7 +26,7 @@ export const ContactForm = ({ locale }: { locale: Locale }) => {
   //ReCaptcha
   const [captchaValue, setCaptchaValue] = useState<string | null>(null);
   const recaptchaRef = useRef(null);
-  const [termsAccepted, setTermsAccepted] = useState(true);
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",

@@ -19,6 +19,9 @@
 [done] стабино сео
 - pwa?
 
+- google console
+- google analitycs
+
 //занапред
 ??социални мрежи??
 - инстаграм акоунт

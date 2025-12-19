@@ -4,6 +4,8 @@ import GenericButton from "../Generic/GenericButton";
 import { PhoneIcon } from "@/assets/icons";
 import { Locale } from "@/types";
 import Badge from "../Custom/Badge";
+import ContactButton from "../Custom/ContactButton";
+import Link from "next/link";
 
 const Hero = ({ locale }: { locale: Locale }) => {
   const hero = getHero(locale);
@@ -11,7 +13,7 @@ const Hero = ({ locale }: { locale: Locale }) => {
     <section className="w-full flex min-h-screen scroll-mt-20" id="home">
       <div className="flex-1 relative z-6 flex flex-col justify-center items-center w-full content_wrapper">
         <div className="mb-4 md:mb-[unset]">
-          <Badge heading="PlanZ"/>
+          <Badge heading="PlanZ" />
         </div>
         <div className="w-full mb-4">
           <GenericHeading
@@ -27,16 +29,14 @@ const Hero = ({ locale }: { locale: Locale }) => {
           </GenericHeading>
         </div>
         <div className="flex flex-col md:flex-row items-center gap-m">
-          <GenericButton>
-            <p className="text-primaryDarkBlue font-bold text-xl">
-              {hero.button}
-            </p>
-          </GenericButton>
-          <GenericButton variant="secondary" styleClass="w-full min-w-40">
-            <div className="flex items-center justify-center size-6 m-0.5">
-              <PhoneIcon />
-            </div>
-          </GenericButton>
+          <ContactButton text={hero.button} />
+          <Link href={`tel: +359 877757765`} target="_blanc" rel="noopener">
+            <GenericButton variant="secondary" styleClass="w-full min-w-40">
+              <div className="flex items-center justify-center size-6 m-0.5">
+                <PhoneIcon />
+              </div>
+            </GenericButton>
+          </Link>
         </div>
       </div>
     </section>

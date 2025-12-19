@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "PlanZ",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://planz-seven.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "PlanZ – Изработка на уебсайтове и уеб разработка",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "PlanZ – Изработка на уебсайтове и уеб разработка",
     description:
       "Създаваме подредени, бързи и надеждни уебсайтове за бизнеси, които имат нужда от ясно онлайн присъствие, техническа стабилност и добра основа за SEO.",
-    images: ["/og-image.png"],
+    images: ["https://planz-seven.vercel.app/og-image.png"],
   },
   icons: {
     icon: [

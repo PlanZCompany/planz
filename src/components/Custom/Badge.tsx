@@ -1,6 +1,7 @@
+import { Locale } from "@/types";
 import GenericParagraph from "../Generic/GenericParagraph";
 
-const Badge = ({ heading }: { heading: string }) => {
+const Badge = ({ heading, locale }: { heading: string; locale: Locale }) => {
   return (
     <div className="flex overflow-hidden px-3 py-0.5 rounded-[100px] border-2 border-primaryDarkGreen bg-primaryGreen/30 items-center gap-2">
       <div className="flex justify-center items-center">
@@ -35,7 +36,13 @@ const Badge = ({ heading }: { heading: string }) => {
         </svg>
       </div>
 
-      <GenericParagraph pType="regular" fontStyle="font-clash font-bold">
+      <GenericParagraph
+        pType="regular"
+        fontStyle={
+          locale === "en" ? "font-clash font-bold" : "font-sansation font-bold"
+        }
+        textColor="text-white"
+      >
         {heading}
       </GenericParagraph>
     </div>

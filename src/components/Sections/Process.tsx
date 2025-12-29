@@ -111,7 +111,7 @@ const Process = ({ locale }: { locale: Locale }) => {
         <div className="w-full flex">
           <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
             <div className="w-fit mx-auto md:mx-[unset]">
-              <Badge heading={extraText[locale]} />
+              <Badge heading={extraText[locale]} locale={locale} />
             </div>
 
             <div className="w-full md:w-fit">
@@ -130,6 +130,11 @@ const Process = ({ locale }: { locale: Locale }) => {
               <GenericParagraph
                 pType="large"
                 extraClass="text-center md:text-left"
+                fontStyle={
+                  locale === "en"
+                    ? "font-clash font-normal"
+                    : "font-sansation font-normal"
+                }
               >
                 {subheading[locale]}
               </GenericParagraph>

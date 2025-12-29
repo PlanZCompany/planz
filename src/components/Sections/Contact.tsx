@@ -157,13 +157,18 @@ export const ContactForm = ({ locale }: { locale: Locale }) => {
         </div>
         <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
           <div className="w-full justify-center md:justify-end flex mb-3 md:mb-[unset]">
-            <Badge heading={eyebrow} />
+            <Badge heading={eyebrow} locale={locale} />
           </div>
 
           <div className="w-full md:w-fit">
             <GenericHeading
               headingType="h2"
               extraClass="text-center! md:text-right! mb-3 md:mb-[unset]"
+              fontStyle={
+                locale === "en"
+                  ? "font-clash font-normal"
+                  : "font-sansation font-normal"
+              }
             >
               {heading}
             </GenericHeading>

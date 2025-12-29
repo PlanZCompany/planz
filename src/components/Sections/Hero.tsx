@@ -13,7 +13,7 @@ const Hero = ({ locale }: { locale: Locale }) => {
     <section className="w-full flex min-h-screen scroll-mt-20" id="home">
       <div className="flex-1 relative z-6 flex flex-col justify-center items-center w-full content_wrapper">
         <div className="mb-4 md:mb-[unset]">
-          <Badge heading="PlanZ" />
+          <Badge heading="PlanZ" locale={"en"} />
         </div>
         <div className="w-full mb-4">
           <GenericHeading

@@ -14,7 +14,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
     const featuresContent = project.features[locale].map((feature, index) => (
       <li
         key={`${feature}-${index}`}
-        className="border border-gray-400 bg-primaryDarkGreen/20 px-4 py-2 rounded-[100px] flex justify-center items-center w-full md:w-fit"
+        className="border-b border-gray-400 bg-linear-to-t from-primaryDarkGreen/40 via-primaryDarkGreen/20 to-transparent px-4 py-2 flex justify-center items-center w-full md:w-fit"
       >
         <GenericParagraph
           pType="small"
@@ -41,7 +41,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
         <div className="flex-1 md:max-w-[45%] flex">
           <div className="w-full flex flex-col gap-4 md:gap-5 m-auto">
             <div
-              className={`border border-gray-400 bg-primaryDarkGreen/20 px-4 py-2 rounded-[100px] flex justify-center items-center w-full md:w-fit
+              className={`border-b border-gray-400 bg-linear-to-t from-primaryDarkGreen/40 via-primaryDarkGreen/20 to-transparent  px-4 py-2 flex justify-center items-center w-full md:w-fit
             ${isOdd ? "md:ml-auto" : "md:mr-auto"}`}
             >
               <GenericParagraph
@@ -59,7 +59,11 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
 
             <GenericHeading
               headingType="h3"
-              fontStyle="font-sansation font-bold"
+              fontStyle={
+                locale === "en"
+                  ? "font-clash font-bold"
+                  : "font-sansation font-bold"
+              }
               extraClass={`${isOdd ? "md:text-right" : "md:text-left"}`}
             >
               {project.title[locale]}
@@ -152,13 +156,18 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
           </div>
           <div className="w-full md:w-fit md:min-w-[45%] flex flex-col gap-2 md:gap-3">
             <div className="w-full justify-center md:justify-end flex mb-3 md:mb-[unset]">
-              <Badge heading={extraText[locale]} />
+              <Badge heading={extraText[locale]} locale={locale} />
             </div>
 
             <div className="w-full md:w-fit">
               <GenericHeading
                 headingType="h2"
                 extraClass="text-center! md:text-right! mb-3 md:mb-[unset]"
+                fontStyle={
+                  locale === "en"
+                    ? "font-clash font-bold"
+                    : "font-sansation font-bold"
+                }
               >
                 {heading[locale]}
               </GenericHeading>

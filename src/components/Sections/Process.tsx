@@ -81,7 +81,7 @@ const Process = ({ locale }: { locale: Locale }) => {
                 textColor="text-primaryGreen"
                 extraClass="max-w-[90%] mx-auto text-pretty"
               >
-                {step.title[locale]}
+                <h4>{step.title[locale]}</h4>
               </GenericHeading>
             </div>
 
@@ -125,7 +125,7 @@ const Process = ({ locale }: { locale: Locale }) => {
                 }
                 extraClass="mb-2 md:mb-[unset]"
               >
-                {heading[locale]}
+                <h2>{heading[locale]}</h2>
               </GenericHeading>
               <GenericParagraph
                 pType="large"

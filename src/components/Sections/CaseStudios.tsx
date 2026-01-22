@@ -14,7 +14,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
     const featuresContent = project.features[locale].map((feature, index) => (
       <li
         key={`${feature}-${index}`}
-        className="border-b border-gray-400 bg-linear-to-t from-primaryDarkGreen/40 via-primaryDarkGreen/20 to-transparent px-4 py-2 flex justify-center items-center w-full md:w-fit"
+        className="bg-linear-to-t from-transparent via-primaryDarkGreen/50 to-transparent rounded-xl px-4 py-2 flex justify-center items-center w-full md:w-fit"
       >
         <GenericParagraph
           pType="small"
@@ -66,7 +66,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
               }
               extraClass={`${isOdd ? "md:text-right" : "md:text-left"}`}
             >
-              {project.title[locale]}
+              <h3>{project.title[locale]}</h3>
             </GenericHeading>
             <GenericParagraph
               fontStyle={
@@ -169,7 +169,7 @@ const CaseStudios = ({ locale }: { locale: Locale }) => {
                     : "font-sansation font-bold"
                 }
               >
-                {heading[locale]}
+                <h2>{heading[locale]}</h2>
               </GenericHeading>
               <GenericParagraph
                 pType="large"

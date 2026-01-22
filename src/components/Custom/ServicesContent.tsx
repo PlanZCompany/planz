@@ -22,10 +22,10 @@ const ServicesContent = ({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentHeading(
-        (prevIndex) => (prevIndex + 1) % servicesContent.length
+        (prevIndex) => (prevIndex + 1) % servicesContent.length,
       );
       setCurrentDescription(
-        (prevIndex) => (prevIndex + 1) % servicesContent.length
+        (prevIndex) => (prevIndex + 1) % servicesContent.length,
       );
       setCurrentIndexCallbackHandler("morphing");
     }, 10000);
@@ -59,7 +59,7 @@ const ServicesContent = ({
               textColor="text-primaryGreen"
               extraClass="max-w-[90%] mx-auto text-pretty"
             >
-              {servicesContent[currentHeading].title}
+              <h3>{servicesContent[currentHeading].title}</h3>
             </GenericHeading>
           </div>
 

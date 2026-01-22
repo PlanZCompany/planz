@@ -264,7 +264,8 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 .gray_gradient_second {
-  background-image: repeating-linear-gradient(
+  background-image:
+    repeating-linear-gradient(
       45deg,
       rgba(97, 97, 97, 0.1) 0px,
       rgba(97, 97, 97, 0.1) 2px,
@@ -275,7 +276,8 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 .gray-gradient_3 {
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 97% 32%,
       rgba(131, 131, 131, 0.05) 0%,
       rgba(131, 131, 131, 0.05) 50%,
@@ -312,5 +314,166 @@ video::-webkit-media-controls-start-playback-button {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+.text_cursor_animation {
+  border-right: solid 3px #3b8ff6;
+  white-space: nowrap;
+  overflow: hidden;
+
+  animation:
+    animated-cursor-text 1s steps(29, end) 1s 1 normal both,
+    animated-cursor 1s steps(29, end) 1s 1 normal both;
+}
+
+@keyframes animated-cursor-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor {
+  0% {
+    border-right-color: transparent;
+  }
+  5% {
+    border-right-color: #3b8ff6;
+  }
+  20% {
+    border-right-color: transparent;
+  }
+  40% {
+    border-right-color: #3b8ff6;
+  }
+  60% {
+    border-right-color: transparent;
+  }
+  80% {
+    border-right-color: #3b8ff6;
+  }
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+.reveal_content {
+  animation: reveal-inset-rectangle 2000ms 0ms forwards ease-in-out;
+
+  background: radial-gradient(#27d47f20, #18a15d80);
+}
+.reveal_content.reveal-triangle {
+  animation-name: reveal-triangle;
+}
+
+@keyframes reveal-triangle {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(70% 100%, -20% 43%, 100% -10%);
+  }
+}
+
+@media (max-width: 768px) {
+  .reveal_content.shape-rectangle {
+    animation-name: reveal-inset-rectangle;
+  }
+}
+
+@keyframes reveal-triangle-mobile {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(85% 110%, -50% 55%, 120% -25%);
+  } /* example values */
+}
+
+/* common collapsed start */
+@keyframes reveal-rectangle {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes reveal-inset-rectangle {
+  /* “frame-ish” / safe margins */
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(8% 10%, 92% 10%, 92% 90%, 8% 90%);
+  }
+}
+
+@keyframes reveal-parallelogram {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+  }
+}
+
+@keyframes reveal-trapezoid {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes reveal-diamond {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+}
+
+@keyframes reveal-hexagon {
+  from {
+    clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  }
+}
+
+@keyframes reveal-octagon {
+  from {
+    clip-path: polygon(
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%,
+      50% 50%
+    );
+  }
+  to {
+    clip-path: polygon(
+      20% 0%,
+      80% 0%,
+      100% 20%,
+      100% 80%,
+      80% 100%,
+      20% 100%,
+      0% 80%,
+      0% 20%
+    );
   }
 }

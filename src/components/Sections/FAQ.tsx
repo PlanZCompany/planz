@@ -42,7 +42,7 @@ const FAQSection = ({ locale }: { locale: Locale }) => {
                 }
                 extraClass="mb-2 md:mb-[unset]"
               >
-                {heading}
+                <h2>{heading}</h2>
               </GenericHeading>
               <GenericParagraph
                 pType="large"

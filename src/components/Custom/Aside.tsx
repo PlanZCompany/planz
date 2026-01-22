@@ -13,6 +13,7 @@ import Link from "next/link";
 
 const Aside = () => {
   const [connectionsOpen, setConnectionsOpen] = useState(false);
+  const phones = ["+359 877757765", "+359 887933423"];
 
   const connectionsContent = QUICK_CONNECTIONS.map((connection, index) => {
     let connectionIcon = <PhoneIcon />;
@@ -32,13 +33,25 @@ const Aside = () => {
     return (
       <li
         key={`${connection}-${index}`}
-        className={`cursor-pointer rounded-full size-10 flex justify-center items-center ${connection.backgroundColor}`}
+        className={`cursor-pointer rounded-full size-10 flex justify-center items-center relative ${connection.backgroundColor}`}
       >
-        <Link href={connection.link} className="w-full h-full flex justify-center items-center">
+        <Link
+          className="absolute left-0 top-0 bottom-0 w-[50%]"
+          href={`tel:${phones[0]}`}
+          target="_blanc"
+          rel="noopener"
+        ></Link>
+        <div className="w-full h-full flex justify-center items-center">
           <div className="w-7 h-7 md:w-6 md:h-6 flex justify-center items-center">
             {connectionIcon}
           </div>
-        </Link>
+        </div>
+        <Link
+          className="absolute right-0 top-0 bottom-0 w-[50%]"
+          href={`tel:${phones[1]}`}
+          target="_blanc"
+          rel="noopener"
+        ></Link>
       </li>
     );
   });

@@ -170,7 +170,7 @@ export const ContactForm = ({ locale }: { locale: Locale }) => {
                   : "font-sansation font-normal"
               }
             >
-              {heading}
+              <h2>{heading}</h2>
             </GenericHeading>
             <GenericParagraph
               pType="large"

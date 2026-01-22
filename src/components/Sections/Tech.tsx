@@ -90,11 +90,11 @@ const Tech = ({ locale }: { locale: Locale }) => {
                 extraClass="text-center! md:text-right! mb-3 md:mb-[unset]"
                 fontStyle={
                   locale === "en"
-                    ? "font-clash font-normal"
-                    : "font-sansation font-normal"
+                    ? "font-clash font-bold"
+                    : "font-sansation font-bold"
                 }
               >
-                {heading}
+                <h2>{heading}</h2>
               </GenericHeading>
               <GenericParagraph
                 pType="large"

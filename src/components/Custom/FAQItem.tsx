@@ -42,7 +42,7 @@ export const FaqItem: React.FC<FaqItemProps> = ({
           }
           textColor="text-primaryGreen"
         >
-          {question}
+          <h5>{question}</h5>
         </GenericHeading>
 
         <span className="hover:opacity-80 cursor-pointer flex h-7 w-7 min-h-7 min-w-7 items-center justify-center rounded-full border border-primaryGreen bg-primaryDarkGreen transition-colors">

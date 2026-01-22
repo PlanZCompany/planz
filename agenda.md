@@ -26,3 +26,9 @@
 ??социални мрежи??
 - инстаграм акоунт
 - facebook account
+
+**MARKETING_OF_COMPANY**
+- facebook groups
+- different promotions - (cards with website tech and price)
+- olx and bazar promotions of add
+- some google promotion 

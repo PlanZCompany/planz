@@ -32,8 +32,6 @@ const ServicesContent = ({
     return () => clearInterval(interval);
   }, [servicesContent.length, setCurrentIndexCallbackHandler]);
 
-  console.log("RENDER SERVICES", currentHeading);
-
   return (
     <div className="flex flex-1 p-6 md:p-20">
       <article className="flex-1 rounded-3xl overflow-hidden border-2 border-primaryDarkGreen flex justify-center items-center relative">

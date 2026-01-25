@@ -1,4 +1,5 @@
 import FixedBackground from "@/components/Custom/FixedBackground";
+import OfferCardModal from "@/components/Modal/OfferCardModal";
 import {
   CaseStudios,
   ContactForm,
@@ -22,6 +23,8 @@ export default function HomePage() {
       <Tech locale="bg" />
       <FAQSection locale="bg" />
       <ContactForm locale="bg" />
+
+      <OfferCardModal locale="bg" />
     </main>
   );
 }

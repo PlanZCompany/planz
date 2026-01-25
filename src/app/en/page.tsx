@@ -10,6 +10,7 @@ import {
   Services,
   Tech,
 } from "@/components/Sections";
+import OfferCardModal from "@/components/Modal/OfferCardModal";
 
 export default function HomePage() {
   return (
@@ -26,6 +27,8 @@ export default function HomePage() {
       <FAQSection locale="en" />
 
       <ContactForm locale="en" />
+
+      <OfferCardModal locale="en" />
     </main>
   );
 }

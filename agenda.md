@@ -18,6 +18,7 @@
 [done] fav icon meta image and etc
 [done] стабино сео
 - pwa?
+- robots txt update / sitemap update
 
 - google console
 - google analitycs
@@ -32,3 +33,4 @@
 - different promotions - (cards with website tech and price)
 - olx and bazar promotions of add
 - some google promotion 
+

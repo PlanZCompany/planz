@@ -48,15 +48,24 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     shortcut: ["/favicon.ico"],
   },
+  //TODO return the robots
+  // robots: {
+  //   index: true,
+  //   follow: true,
+  //   googleBot: {
+  //     index: true,
+  //     follow: true,
+  //     "max-video-preview": -1,
+  //     "max-image-preview": "large",
+  //     "max-snippet": -1,
+  //   },
+  // },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      index: false,
+      follow: false,
     },
   },
 };

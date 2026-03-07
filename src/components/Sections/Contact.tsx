@@ -6,7 +6,7 @@ import GenericButton from "@/components/Generic/GenericButton";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import { Locale } from "@/types";
-import { botValidate } from "@/app/actions/botValidation";
+import { botValidate } from "@/app/(frontend)/actions/botValidation";
 import {
   getContactSectionCopy,
   getContactSuccessCopy,
@@ -15,7 +15,7 @@ import GenericHeading from "../Generic/GenericHeading";
 import GenericParagraph from "../Generic/GenericParagraph";
 import GenericTextInput from "../Generic/GenericTextInput";
 import TextAria from "../Generic/GenericTextArea";
-import { submitContactForm } from "@/app/actions/mail";
+import { submitContactForm } from "@/app/(frontend)/actions/mail";
 import ErrorMessageBox from "../Generic/GenericError";
 import Badge from "../Custom/Badge";
 

@@ -2,27 +2,34 @@ import sharp from "sharp";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { buildConfig } from "payload";
+import { Users } from "./collections/Users";
+import { Media } from "./collections/Media";
+import path from "path";
+import { fileURLToPath } from "url";
+import { Ideas } from "./collections/Ideas";
+import { Members } from "./collections/Members";
+import { Projects } from "./collections/Projects";
+import { Tasks } from "./collections/Tasks";
+const filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(filename);
 
 export default buildConfig({
-  // If you'd like to use Rich Text, pass your editor here
+  defaultDepth: 3,
   editor: lexicalEditor(),
-
-  // Define and configure your collections in this array
-  collections: [],
-
-  // Your Payload secret - should be a complex and secure string, unguessable
+  collections: [Members, Projects, Ideas, Tasks, Users, Media],
+  admin: {
+    user: Users.slug,
+    importMap: {
+      baseDir: path.resolve(dirname),
+    },
+  },
   secret: process.env.PAYLOAD_SECRET || "",
-  // Whichever Database Adapter you're using should go here
-  // Mongoose is shown as an example, but you can also use Postgres
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || "",
     },
-    push: false,
+    push: true,
   }),
-  // If you want to resize images, crop, set focal point, etc.
-  // make sure to install it and pass it to the config.
-  // This is optional - if you don't need to do these things,
-  // you don't need it!
+  globals: [],
   sharp,
 });

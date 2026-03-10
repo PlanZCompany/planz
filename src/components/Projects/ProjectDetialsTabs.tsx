@@ -10,6 +10,7 @@ import {
 } from "@/lib/payload/projects";
 import { extractLexicalText } from "@/lib/lexical/extract-lexical";
 import { cn } from "@/lib/utils";
+import GenericParagraph from "../Generic/GenericParagraph";
 
 type ProjectDetailsTabsProps = {
   project: ProjectDetails;
@@ -43,22 +44,22 @@ function getIdeas(items?: (number | ProjectIdea)[] | null) {
 
 function getStatusClasses(status: ProjectTask["status"]) {
   if (status === "done") {
-    return "border-emerald-500/30 bg-emerald-500/10 text-emerald-300";
+    return "border-emerald-500/30 bg-emerald-500/10 text-emerald-300 p-4 font-sansation";
   }
 
   if (status === "review") {
-    return "border-amber-500/30 bg-amber-500/10 text-amber-300";
+    return "border-amber-500/30 bg-amber-500/10 text-amber-300 p-4 font-sansation";
   }
 
-  return "border-sky-500/30 bg-sky-500/10 text-sky-300";
+  return "border-sky-500/30 bg-sky-500/10 text-sky-300 p-4 font-sansation";
 }
 
 function getPayStatusClasses(status: ProjectTask["payStatus"]) {
   if (status === "done") {
-    return "border-violet-500/30 bg-violet-500/10 text-violet-300";
+    return "border-violet-500/30 bg-violet-500/10 text-violet-300 p-4 font-sansation";
   }
 
-  return "border-rose-500/30 bg-rose-500/10 text-rose-300";
+  return "border-rose-500/30 bg-rose-500/10 text-rose-300 p-4 font-sansation";
 }
 
 export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
@@ -72,17 +73,29 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
       className={`${cn("w-full flex flex-col gap-10")}`}
     >
       <TabsList className="mb-6 grid h-auto w-full grid-cols-2 gap-2 rounded-2xl border border-border bg-card/60 p-2 md:grid-cols-4">
-        <TabsTrigger value="info" className="rounded-xl hover:bg-gray-500/20 cursor-pointer">
-          Info
+        <TabsTrigger
+          value="info"
+          className="rounded-xl hover:bg-gray-500/20 cursor-pointer p-1"
+        >
+          <GenericParagraph>Info</GenericParagraph>
         </TabsTrigger>
-        <TabsTrigger value="estimate" className="rounded-xl hover:bg-gray-500/20 cursor-pointer">
-          Estimate
+        <TabsTrigger
+          value="estimate"
+          className="rounded-xl hover:bg-gray-500/20 cursor-pointer p-1"
+        >
+          <GenericParagraph>Estimate</GenericParagraph>
         </TabsTrigger>
-        <TabsTrigger value="tasks" className="rounded-xl hover:bg-gray-500/20 cursor-pointer">
-          Tasks
+        <TabsTrigger
+          value="tasks"
+          className="rounded-xl hover:bg-gray-500/20 cursor-pointer p-1"
+        >
+          <GenericParagraph>Tasks</GenericParagraph>
         </TabsTrigger>
-        <TabsTrigger value="ideas" className="rounded-xl hover:bg-gray-500/20 cursor-pointer">
-          Ideas
+        <TabsTrigger
+          value="ideas"
+          className="rounded-xl hover:bg-gray-500/20 cursor-pointer p-1"
+        >
+          <GenericParagraph>Ideas</GenericParagraph>
         </TabsTrigger>
       </TabsList>
 
@@ -90,66 +103,69 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
         <div className="rounded-3xl border border-cyan-500/20 bg-gradient-to-br from-card via-card to-cyan-950/20 p-6 shadow-[0_0_40px_rgba(34,211,238,0.08)]">
           <div className="grid gap-4 md:grid-cols-4">
             <div className="rounded-2xl border border-border/70 bg-background/40 p-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Started
-              </p>
-              <p className="mt-2 text-sm font-medium">
+              <GenericParagraph>Started</GenericParagraph>
+
+              <p className="mt-2 text-sm font-medium text-primaryDarkGreen/70 font-sansation">
                 {formatDate(project.startedAt)}
               </p>
             </div>
 
             <div className="rounded-2xl border border-border/70 bg-background/40 p-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Deadline
-              </p>
-              <p className="mt-2 text-sm font-medium">
+              <GenericParagraph>Deadline</GenericParagraph>
+
+              <p className="mt-2 text-sm font-medium text-primaryDarkGreen/70 font-sansation">
                 {formatDate(project.deadlineAt)}
               </p>
             </div>
 
             <div className="rounded-2xl border border-border/70 bg-background/40 p-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Released
-              </p>
-              <p className="mt-2 text-sm font-medium">
+              <GenericParagraph>Released</GenericParagraph>
+
+              <p className="mt-2 text-sm font-medium text-primaryDarkGreen/70 font-sansation">
                 {formatDate(project.releasedAt)}
               </p>
             </div>
 
             <div className="rounded-2xl border border-border/70 bg-background/40 p-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Members
+              <GenericParagraph>Members</GenericParagraph>
+
+              <p className="mt-2 text-sm font-medium text-primaryDarkGreen/70 font-sansation">
+                {members.length}
               </p>
-              <p className="mt-2 text-sm font-medium">{members.length}</p>
             </div>
           </div>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[1.5fr_0.9fr]">
-          <div className="rounded-3xl border border-border bg-card p-6">
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-400">
-              Overview
-            </p>
-            <h2 className="mt-3 text-2xl font-semibold">{project.title}</h2>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
+          <div className="rounded-3xl border border-border bg-card p-6 font-sansation">
+            <div className="text-xs uppercase tracking-[0.25em]">
+              <GenericParagraph pType="small" textColor="text-primaryGreen">
+                Project
+              </GenericParagraph>
+            </div>
+            <h2 className="mt-3 text-2xl font-semibold">
+              <GenericParagraph>{project.title}</GenericParagraph>
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-muted-foreground font-sansation">
               {project.shortDescription}
             </p>
 
             <div className="mt-6 rounded-2xl border border-border/70 bg-background/40 p-5">
-              <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Full description
-              </p>
-              <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-foreground/90">
+              <GenericParagraph>Full description</GenericParagraph>
+
+              <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-foreground/90 font-sansation">
                 {extractLexicalText(project.fullDescription) ||
                   "No description available."}
               </p>
             </div>
           </div>
 
-          <div className="rounded-3xl border border-border bg-card p-6">
-            <p className="text-xs uppercase tracking-[0.25em] text-cyan-400">
-              Core members
-            </p>
+          <div className="rounded-3xl border border-border bg-card p-6 font-sansation">
+            <div className="text-xs uppercase tracking-[0.25em] font-sansation">
+              <GenericParagraph pType="small" textColor="text-primaryGreen">
+                Core members
+              </GenericParagraph>
+            </div>
 
             <div className="mt-4 space-y-3">
               {members.length === 0 ? (
@@ -172,7 +188,7 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
 
                       <Badge
                         variant="outline"
-                        className="border-cyan-500/20 bg-cyan-500/10 text-cyan-300"
+                        className="border-primaryGreen/20 p-4 bg-cyan-500/10 text-primaryGreen"
                       >
                         {member.role}
                       </Badge>
@@ -187,11 +203,12 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
 
       <TabsContent value="estimate">
         <div className="rounded-3xl border border-violet-500/20 bg-gradient-to-br from-card via-card to-violet-950/20 p-6 shadow-[0_0_40px_rgba(139,92,246,0.08)]">
-          <p className="text-xs uppercase tracking-[0.25em] text-violet-400">
+          <GenericParagraph textColor="text-primaryGreen">
             Estimate
-          </p>
+          </GenericParagraph>
+
           <div className="mt-4 rounded-2xl border border-border/70 bg-background/40 p-5">
-            <p className="whitespace-pre-wrap text-sm leading-7 text-foreground/90">
+            <p className="whitespace-pre-wrap text-sm leading-7 text-foreground/90 font-sansation">
               {extractLexicalText(project.estimate) || "No estimate available."}
             </p>
           </div>
@@ -215,8 +232,8 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
                 >
                   <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                     <div className="space-y-3">
-                      <p className="text-lg font-semibold">{task.title}</p>
-                      <p className="text-sm leading-7 text-muted-foreground">
+                      <GenericParagraph>{task.title}</GenericParagraph>
+                      <p className="text-sm leading-7 text-muted-foreground font-sansation">
                         {extractLexicalText(task.description) ||
                           "No description available."}
                       </p>
@@ -240,18 +257,16 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
 
                   <div className="mt-5 grid gap-4 md:grid-cols-2">
                     <div className="rounded-2xl border border-border/70 bg-background/40 p-4">
-                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                        Received at
-                      </p>
-                      <p className="mt-2 text-sm font-medium">
+                      <GenericParagraph>Received at</GenericParagraph>
+
+                      <p className="mt-2 text-sm font-medium text-primaryDarkGreen/70 font-sansation">
                         {formatDate(task.receivedAt)}
                       </p>
                     </div>
 
                     <div className="rounded-2xl border border-border/70 bg-background/40 p-4">
-                      <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                        Members
-                      </p>
+                      <GenericParagraph>Members</GenericParagraph>
+
                       <div className="mt-2 flex flex-wrap gap-2">
                         {taskMembers.length === 0 ? (
                           <span className="text-sm text-muted-foreground">
@@ -264,7 +279,12 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
                               variant="outline"
                               className="border-border bg-background/60 text-foreground"
                             >
-                              {member.name}
+                              <GenericParagraph
+                                pType="small"
+                                extraClass="opacity-80"
+                              >
+                                {member.name}
+                              </GenericParagraph>
                             </Badge>
                           ))
                         )}
@@ -273,32 +293,34 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
                   </div>
 
                   <div className="mt-5 rounded-2xl border border-border/70 bg-background/40 p-4">
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Estimate
-                    </p>
-                    <p className="mt-3 text-sm leading-7 text-foreground/90">
+                    <GenericParagraph>Estimate</GenericParagraph>
+
+                    <p className="mt-3 text-sm leading-7 text-foreground/90 font-sansation">
                       {extractLexicalText(task.estimate) ||
                         "No estimate available."}
                     </p>
                   </div>
 
                   <div className="mt-5 rounded-2xl border border-border/70 bg-background/40 p-4">
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      Comments
-                    </p>
+                    <GenericParagraph>Comments</GenericParagraph>
 
                     <div className="mt-3 space-y-2">
                       {task.comments?.length ? (
                         task.comments.map((comment, index) => (
                           <div
                             key={comment.id ?? `${task.id}-${index}`}
-                            className="rounded-xl border border-border/60 bg-background/60 p-3 text-sm text-foreground/90"
+                            className="rounded-xl border border-border/60 bg-background/60 p-3 text-sm text-foreground/90 font-sansation"
                           >
-                            {comment.text}
+                            <GenericParagraph
+                              pType="small"
+                              extraClass="opacity-80"
+                            >
+                              {comment.text}
+                            </GenericParagraph>
                           </div>
                         ))
                       ) : (
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-sm text-muted-foreground font-sansation">
                           No comments available.
                         </p>
                       )}
@@ -321,13 +343,18 @@ export function ProjectDetailsTabs({ project }: ProjectDetailsTabsProps) {
             ideas.map((idea) => (
               <div
                 key={idea.id}
-                className="rounded-3xl border border-fuchsia-500/20 bg-gradient-to-br from-card via-card to-fuchsia-950/10 p-6 shadow-[0_0_30px_rgba(217,70,239,0.06)]"
+                className="rounded-3xl border border-primaryGreen/20 bg-gradient-to-br from-card via-card
+                 to-fuchsia-950/10 p-6 shadow-[0_0_30px_rgba(217,70,239,0.06)]"
               >
-                <p className="text-xs uppercase tracking-[0.25em] text-fuchsia-400">
+                <GenericParagraph extraClass="text-xs uppercase tracking-[0.25em] !font-sansation text-primaryGreen">
                   Idea
-                </p>
-                <h3 className="mt-3 text-lg font-semibold">{idea.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">
+                </GenericParagraph>
+                <h3 className="mt-3 text-lg font-semibold">
+                  <GenericParagraph>
+                    {idea.title}
+                  </GenericParagraph>
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground font-sansation">
                   {extractLexicalText(idea.description) ||
                     "No description available."}
                 </p>

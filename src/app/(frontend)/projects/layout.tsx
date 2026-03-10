@@ -1,48 +1,56 @@
-import type { ReactNode } from 'react'
-import { cookies } from 'next/headers'
-import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
-import { getProjectsForSidebar } from '@/lib/payload/projects'
-import type { ProjectAccessUser } from '@/store/project-access-store'
-import { ProjectAccessGate } from '@/components/Projects/ProjectAccessGate'
-import { ProjectAccessStoreSync } from '@/components/Projects/ProjectAccessStoreSync'
-import { ProjectLogoutButton } from '@/components/Projects/ProjectLogout'
-import { ProjectsSidebar } from '@/components/SIdebar/ProjectSidebar'
+import type { ReactNode } from "react";
+import { cookies } from "next/headers";
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { getProjectsForSidebar } from "@/lib/payload/projects";
+import type { ProjectAccessUser } from "@/store/project-access-store";
+import { ProjectAccessGate } from "@/components/Projects/ProjectAccessGate";
+import { ProjectAccessStoreSync } from "@/components/Projects/ProjectAccessStoreSync";
+import { ProjectLogoutButton } from "@/components/Projects/ProjectLogout";
+import { ProjectsSidebar } from "@/components/SIdebar/ProjectSidebar";
+import FloatingLines from "@/components/FloatingLines";
+import GenericParagraph from "@/components/Generic/GenericParagraph";
 
 type ProjectsLayoutProps = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 function parseProjectAccessCookie(value: string): ProjectAccessUser | null {
   try {
-    const parsed = JSON.parse(value) as ProjectAccessUser
+    const parsed = JSON.parse(value) as ProjectAccessUser;
 
     if (
-      typeof parsed?.id === 'number' &&
-      typeof parsed?.name === 'string' &&
-      typeof parsed?.email === 'string' &&
-      (parsed?.role === 'admin' || parsed?.role === 'viewer')
+      typeof parsed?.id === "number" &&
+      typeof parsed?.name === "string" &&
+      typeof parsed?.email === "string" &&
+      (parsed?.role === "admin" || parsed?.role === "viewer")
     ) {
-      return parsed
+      return parsed;
     }
 
-    return null
+    return null;
   } catch {
-    return null
+    return null;
   }
 }
 
-export default async function ProjectsLayout({ children }: ProjectsLayoutProps) {
-  const cookieStore = await cookies()
-  const accessCookie = cookieStore.get('project-access')
+export default async function ProjectsLayout({
+  children,
+}: ProjectsLayoutProps) {
+  const cookieStore = await cookies();
+  const accessCookie = cookieStore.get("project-access");
   const user = accessCookie?.value
     ? parseProjectAccessCookie(accessCookie.value)
-    : null
+    : null;
 
   if (!user) {
-    return <ProjectAccessGate />
+    return <ProjectAccessGate />;
   }
 
-  const projects = await getProjectsForSidebar()
+  const projects = await getProjectsForSidebar();
 
   return (
     <div className="dark min-h-screen bg-background text-foreground">
@@ -55,20 +63,21 @@ export default async function ProjectsLayout({ children }: ProjectsLayoutProps) 
             <div className="flex items-center">
               <SidebarTrigger className="text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground" />
               <div className="ml-3">
-                <p className="text-sm font-medium text-sidebar-foreground">
-                  Projects
-                </p>
+                <GenericParagraph pType="regular">Projects</GenericParagraph>
               </div>
             </div>
 
             <ProjectLogoutButton />
           </header>
 
-          <main className="min-h-[calc(100vh-56px)] bg-background p-4">
-            {children}
+          <main className="flex-1 bg-background p-4 relative">
+            <div className="fixed z-1 inset-0 opacity-50">
+              <FloatingLines />
+            </div>
+            <div className="relative z-2">{children}</div>
           </main>
         </SidebarInset>
       </SidebarProvider>
     </div>
-  )
+  );
 }

@@ -12,6 +12,7 @@ import {
 import Hero from "@/components/Sections/Hero";
 
 export default function HomePage() {
+  console.log("Build 03.06.2026")
   return (
     <main className="min-h-screen flex flex-col">
       <FixedBackground />
